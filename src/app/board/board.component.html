@@ -1,0 +1,24 @@
+<h1 class="mt-4" *ngIf="!winner">Current Player:
+  <strong>{{ getPlayer(player) | uppercase}}</strong> </h1>
+<h1 class="mt-4" *ngIf="winner">
+  <strong> {{ getPlayer(winner) | uppercase}} </strong>
+  Won the Game..!
+</h1>
+<h1 *ngIf="isDraw">
+  It's a <strong>DRAW...!</strong>
+</h1>
+
+<button class="btn btn-danger" (click)="newGame()">START NEW GAME</button>
+
+<main class="py-3">
+  <div class="backdrop" *ngIf="isDraw || winner">
+    <h2 *ngIf="winner"> <strong>{{ getPlayer(winner) | uppercase }}</strong> WON the Game! </h2>
+
+    <h2 *ngIf="isDraw">
+      It's a <strong>DRAW...!</strong>
+    </h2>
+  </div>
+  <app-square *ngFor="let val of squares; let i = index" [value]="val" (click)="makeMove(i)">
+  </app-square>
+</main>
+<button class="btn btn-round btn-simple btn-danger" [routerLink]="['/welcome']">Back</button>
