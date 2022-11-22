@@ -125,7 +125,6 @@
       }
     }
   },
-  "defaultProject": "mygame",
   "cli": {
     "analytics": false
   }

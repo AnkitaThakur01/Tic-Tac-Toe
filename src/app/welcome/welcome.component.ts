@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PlayerService } from '../player.service';
 
@@ -11,8 +11,8 @@ export class WelcomeComponent implements OnInit {
 
   isSystem = false;
 
-  xPlayer = new FormControl();
-  yPlayer = new FormControl();
+  xPlayer = new UntypedFormControl();
+  yPlayer = new UntypedFormControl();
 
   constructor(private router: Router, private service: PlayerService) { }
 
